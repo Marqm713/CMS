@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System - Enrollment</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Enrollment</h1>
+        <div class="mb-3">
+            <a class="btn btn-primary" href="/dashboard">Home</a>
+        </div>
+        <table class="table table-bordered table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course Name</th>
+                    <th>Enroll Actions</th>
+                    <th>Withdraw Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% courses.forEach(function(course) { %>
+                    <tr>
+                        <td><%= course.course_id %></td>
+                        <td><%= course.course_name %></td>
+                        
+                        <td>
+                            <a class="btn btn-info btn-sm" href="/enrollments/student/<%= course.course_id %>">Enroll Student</a>
+                            <a class="btn btn-info btn-sm" href="/enrollments/faculty/<%= course.course_id %>">Enroll Faculty</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger btn-sm" href="/enrollments/withdraw/student/<%= course.course_id %>">Withdraw Student</a>
+                            <a class="btn btn-danger btn-sm" href="/enrollments/withdraw/faculty/<%= course.course_id %>">Withdraw Faculty</a>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

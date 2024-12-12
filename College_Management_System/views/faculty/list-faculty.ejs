@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System - All Faculty</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Faculty</h1>
+        <div class="mb-3">
+            <a class="btn btn-primary" href="/dashboard">Home</a>
+            <a class="btn btn-info" href="/faculty/new">Add New faculty Member</a>
+        </div>
+        <table class="table table-bordered table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>faculty ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% faculty.forEach(faculty => { %>
+                    <tr>
+                        <td><%= faculty.faculty_id %></td>
+                        <td><%= faculty.first_name %></td>
+                        <td><%= faculty.last_name %></td>
+                        <td><%= faculty.email %></td>
+                        <td>
+                            <a class="btn btn-warning btn-sm" href="/faculty/edit/<%= faculty.faculty_id %>">Edit</a>
+                            <a class="btn btn-danger btn-sm" href="/faculty/delete/<%= faculty.faculty_id %>">Delete</a>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

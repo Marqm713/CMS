@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Student in Course</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Enroll Student in Course</h1>
+        <form action="/enrollments/student/<%= course_id %>" method="POST">
+            <div class="form-group">
+                <label for="student_id">Select Student</label>
+                <select class="form-control" name="student_id" id="student_id" required>
+                    <% students.forEach(student => { %>
+                        <option value="<%= student.student_id %>">
+                            <%= student.first_name %> <%= student.last_name %>
+                        </option>
+                    <% }); %>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Enroll Student</button>
+            <a href="/enrollments/list" class="btn btn-secondary">Back to Enrollments</a>
+        </form>
+    </div>
+</body>
+</html>

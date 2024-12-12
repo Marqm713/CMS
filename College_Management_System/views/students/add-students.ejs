@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System - Add Students</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Add New Student</h1>
+        <form method="POST" action="/students/new">
+            <div class="form-group mt-3">
+                <label for="studentID">Student ID</label>
+                <input type="text" class="form-control" id="stuedntID" name="student_id" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="first_name" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="price">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="last_name" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="price">Email</label>
+                <input type="text" class="form-control" id="email" name="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Add Student</button>
+        </form>
+    </div>
+</body>
+</html>

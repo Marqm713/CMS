@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Faculty in Course</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Enroll Faculty in Course</h1>
+        <form action="/enrollments/faculty/<%= course_id %>" method="POST">
+            <div class="form-group">
+                <label for="faculty_id">Select Faculty Member</label>
+                <select class="form-control" name="faculty_id" id="faculty_id" required>
+                    <% faculty.forEach(facultyMember => { %>
+                        <option value="<%= facultyMember.faculty_id %>">
+                            <%= facultyMember.first_name %> <%= facultyMember.last_name %>
+                        </option>
+                    <% }); %>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Enroll Faculty</button>
+            <a href="/enrollments/list" class="btn btn-secondary">Back to Enrollments</a>
+        </form>
+    </div>
+</body>
+</html>

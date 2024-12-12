@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Welcome to the user dashboard</h1>
+        <p>Hello, <%=user.username %>! You are logged in, please select a page to navigate to:</p>
+        <table class="table table-bordered table-striped mt-3">
+            <thead>
+                <tr>
+                    <th><a class="btn btn-primary mt-3" href="/enrollments/list">Enrollments</a></th>
+                    <th><a class="btn btn-primary mt-3" href="/students/list-students">Students</a></th>
+                    <th><a class="btn btn-primary mt-3" href="/faculty/list">Faculty</a></th>
+                    <th><a class="btn btn-primary mt-3" href="/courses/list-courses">Courses</a></th>
+                    <th><a class="btn btn-primary mt-3" href="/users/list">Users</a></th>
+                    <th><a class="btn btn-danger" href="/logout">logout</a></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

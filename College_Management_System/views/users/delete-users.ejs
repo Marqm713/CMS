@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm User Deletion</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Confirm User Deletion</h1>
+        <p>Are you sure you want to delete the following user?</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= user.user_id %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.role %></td>
+                </tr>
+            </tbody>
+        </table>
+        <form action="/users/delete/<%= user.user_id %>" method="POST">
+            <button class="btn btn-danger">Delete</button>
+            <a href="/users/list" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

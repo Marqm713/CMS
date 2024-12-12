@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System - Edit Courses</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Edit Course</h1>
+        <form method="POST" action="/courses/update/<%= course.course_id %>">
+            <div class="form-group mt-3">
+                <label for="courseId">Course ID</label>
+                <input type="text" class="form-control" id="courseId" name="course_id" value="<%= course.course_id %>" readonly>
+            </div>
+            <div class="form-group mt-3">
+                <label for="courseName">Course Name</label>
+                <input type="text" class="form-control" id="courseName" name="course_name" value="<%= course.course_name %>" required>
+            </div>
+            <div class="form-group mt-3">
+                <label for="credits">Credits</label>
+                <input type="number" class="form-control" id="credits" name="credits" value="<%= course.credits %>" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Update Course</button>
+        </form>
+    </div>
+</body>
+</html>
