@@ -117,7 +117,7 @@ This project includes both **backend logic** for handling operations and a **use
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone <[repository-url](https://github.com/Marqm713/CMS)>
    cd College_Management_System
    ```
 
@@ -140,7 +140,7 @@ This project includes both **backend logic** for handling operations and a **use
 
 5. Start the application:
    ```bash
-   npm start
+   node app
    ```
 
 6. Open the browser and navigate to:
